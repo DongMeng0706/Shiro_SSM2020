@@ -42,7 +42,7 @@ public class UserRealm extends AuthorizingRealm {
 	protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
 		String username = token.getPrincipal().toString();
 		Object credentials = token.getCredentials();// 用户登陆时传过来的
-		System.out.println(Arrays.toString((char[]) credentials));
+		System.err.println(Arrays.toString((char[]) credentials));
 		// 根据用户名查询用户是否存在
 		User user = this.userService.queryUserByUserName(username);
 		// 返回null说明用户不存在
